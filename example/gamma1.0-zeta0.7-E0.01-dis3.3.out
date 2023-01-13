@@ -1,0 +1,27 @@
+---------------------------------------
+Begin Slurm Prolog: Jan-10-2023 14:52:55
+Job ID:    451835
+User ID:   ywang4107
+Account:   gts-jkretchmer3-chemx
+Job name:  gamma1.0-zeta0.7-E0.01-dis3.3
+Partition: cpu-medium
+QOS:       inferno
+---------------------------------------
+
+The following have been reloaded with a version change:
+  1) anaconda3/2021.05 => anaconda3/2022.05.0.1
+
+/usr/local/pace-apps/lmod/lmod/init/bash: line 170: conda: command not found
+---------------------------------------
+Begin Slurm Epilog: Jan-10-2023 14:54:22
+Job ID:        451835
+Array Job ID:  _4294967294
+User ID:       ywang4107
+Account:       gts-jkretchmer3-chemx
+Job name:      gamma1.0-zeta0.7-E0.01-dis3.3
+Resources:     cpu=16,mem=256G,node=1
+Rsrc Used:     cput=00:23:12,vmem=202936K,walltime=00:01:27,mem=135332K,energy_used=0
+Partition:     cpu-medium
+QOS:           inferno
+Nodes:         atl1-1-03-004-4-2
+---------------------------------------

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+
+mkdir scr 
+
+mv ../1_preparation/*.re ../2_propagation
+cp -r ../1_preparation/per/ per
+mv per/*.movecs .
+#cp ../1_preparation/per/*.db per/
+#cp ../1_preparation/per/*.rt_restart per/
+
+

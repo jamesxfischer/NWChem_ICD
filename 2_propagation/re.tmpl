@@ -1,0 +1,11 @@
+echo
+
+restart FILE_NAME 
+
+rt_tddft
+  tmax 1
+  dt 0.2
+  load restart
+  print charge dipole field energy moocc
+end
+task dft rt_tddft

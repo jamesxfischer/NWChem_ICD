@@ -1,0 +1,14 @@
+---------------------------------------
+Begin Slurm Prolog: Jan-11-2023 13:29:26
+Job ID:    455768
+User ID:   ywang4107
+Account:   gts-jkretchmer3-chemx
+Job name:  NeAr3.3_aDZ_dtime.4
+Partition: cpu-small
+QOS:       inferno
+---------------------------------------
+
+The following have been reloaded with a version change:
+  1) anaconda3/2021.05 => anaconda3/2022.05.0.1
+
+/usr/local/pace-apps/lmod/lmod/init/bash: line 170: conda: command not found

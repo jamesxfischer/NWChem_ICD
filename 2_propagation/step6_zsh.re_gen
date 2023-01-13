@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Usage: ./gen_pbs.sh INPUT1 INPUT2 INPUT3 ...
+
+
+re_TEMPLATE=re.tmpl
+
+for i in *.rt_restart
+
+do 
+  bname=`basename $i .rt_restart`
+  echo "Processing ${bname}.re ..."
+  cat $re_TEMPLATE | sed "s/FILE_NAME/${bname}/g" > ${bname}.re
+done

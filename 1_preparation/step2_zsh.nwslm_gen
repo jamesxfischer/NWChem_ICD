@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Usage: ./gen_pbs.sh INPUT1 INPUT2 INPUT3 ...
+
+PBS_TEMPLATE=zsh.subslmnw.tmpl
+
+for i in *.nw 
+
+do
+  bname=`basename $i .nw`
+  echo "Processing ${bname}re.slm ..."
+  cat $PBS_TEMPLATE | sed "s/TMPL_JOB_NAME/${bname}/g" > ${bname}.slm
+done
+

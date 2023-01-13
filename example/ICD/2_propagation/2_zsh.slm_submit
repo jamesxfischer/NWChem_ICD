@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Usage: ./submit_pbs.sh PBSFILE1 PBSFILE2 ...
+
+
+#Gamma=1.0
+#zeta=1.0
+#dis=3.3
+#E0=0.07
+#
+#for t in $(seq 1459 1 1470)
+#    do
+#      START_NAME="gamma${Gamma}-zeta${zeta}-E${E0}-time.${t}"
+#      echo "Submitting ${START_NAME} ..."
+#      sbatch ${START_NAME}.slm 
+#      sleep 0.5
+#done
+
+for i in *.slm
+    do
+#      START_NAME="gamma${Gamma}-zeta${zeta}-E${E0}-time.${t}"
+      echo "Submitting ${i} ..."
+      sbatch $i
+      sleep 0.5
+done
