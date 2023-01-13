@@ -1,0 +1,55 @@
+echo
+
+scratch_dir ./scr
+
+geometry "Ne" units angstroms noautosym nocenter noautoz
+ Ar       0.00000000     0.00000000   0.0
+end
+
+geometry "Ar" units angstroms noautosym nocenter noautoz
+ Ne       0.00000000     0.00000000   3.3
+end
+
+geometry "dimer" units angstroms noautosym nocenter noautoz
+ Ne       0.00000000     0.00000000    0.0
+ Ar       0.00000000     0.00000000    3.3
+end
+
+BASIS spherical
+ Ne  library d-aug-cc-pvdz file ./d-aug-cc-pvdz
+ Ar  library def2-qzvp     file ./def2-qzvp
+END
+
+dft
+ xc xcamb88 1.00 lyp 0.81 vwn_5 0.19 hfexch 1.00  
+ cam 0.33 cam_alpha 0.19 cam_beta 0.46
+ disp vdw 4
+ odft
+end
+
+set geometry "Ne"
+set geometry "Ar"
+set geometry "dimer"
+
+task dft
+
+unset rt_tddft:*
+rt_tddft
+  tmax 1.0
+  dt 0.5
+  print dipole energy charge moocc
+
+  mocap
+    expconst 0.7     # exponential constant for CAP
+    emin 0.01         # any MO with eigenvalue >= 0.5 Ha will have CAP applied to it
+    prefac 1.0       # prefactor for exponential
+    maxval 1000.0    # clamp CAP at this value (in Ha)
+    on               # turn off CAP
+    nochecks         # disable checks for speed
+#    noprint          # don't print CAP value
+  end
+
+end
+task dft rt_tddft
+
+

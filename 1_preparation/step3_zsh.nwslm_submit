@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Usage: ./submit_pbs.sh PBSFILE1 PBSFILE2 ...
+
+for i in *.slm 
+
+do
+  echo "Submitting i ..."
+  sbatch $i 
+  sleep 0.5
+done
+
+

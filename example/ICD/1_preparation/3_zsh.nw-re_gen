@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+Gamma=1.0
+zeta=1.0
+dis=3.3
+E0=0.07
+#for dis in $(seq 3.2 0.1 3.5)
+#do
+#  for zeta in $(seq 0.7  0.3 2.5) 
+#  do
+    for dt in $(seq 1 1 5)
+    do
+      START_NAME="NeAr3.3_aDZ_dtime.${dt}"
+      cat 3_nw.tmpl > ${START_NAME}.nw 
+      cat 3_re.tmpl | sed "s/RESTART_NAME/${START_NAME}/g" | sed "s/DELTA_TIME/${dt}/g" > ${START_NAME}.re
+    done
+#  done
+#done
+
+
+# START_NAME="gamma${Gamma}-zeta${zeta}-E${E0}-time.${t}"
