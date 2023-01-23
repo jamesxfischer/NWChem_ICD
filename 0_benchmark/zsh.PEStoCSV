@@ -1,0 +1,7 @@
+
+for i in `ls -d */`
+do 
+  cd $i 
+  python3 ../py_read.py
+  cd ..  
+done

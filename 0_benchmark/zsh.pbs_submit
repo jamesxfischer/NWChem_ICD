@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Usage: ./submit_pbs.sh PBSFILE1 PBSFILE2 ...
+
+for i in *.pbs 
+
+do
+  echo "Submitting i ..."
+  qsub $i 
+  sleep 0.5
+done
+

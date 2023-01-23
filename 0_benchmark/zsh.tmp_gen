@@ -1,0 +1,24 @@
+#!/bin/bash
+
+XYZ=x
+#####Omega=0.5
+#Gau=0.5
+Gamma=1.0
+Zeta=0.5
+E0=0.07
+###w=5
+
+#bname=`basename $i .com`
+
+for Gau in $(seq 0.3 0.1 1.4)
+do
+  for w in $(seq 0.5 0.5 4.5)
+  do
+    for freq in $(seq 1.1 0.3 2.0)
+    do 
+     START_NAME="${XYZ}Gau${Gau}-frq${freq}-w${w}-gamma${Gamma}-zeta${Zeta}-E${E0}"
+     cat pulse0.4-frq1.15-w5-gamma1.0-zeta1.0-E0.07.tmpl | sed "s/FREQ/${freq}/g" | sed "s/WIDTH/${w}/g" | sed "s/INTEN/${Gau}/g" > ${START_NAME}.nw
+    done
+  done
+done
+
