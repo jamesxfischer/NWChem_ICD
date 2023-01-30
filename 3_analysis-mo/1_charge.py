@@ -19,8 +19,8 @@ while i < len(outputs):
   output_Dimer1=filename+"_"+Dimer1
   output_Dimer2=filename+"_"+Dimer2
 #  output_filename = "ETH." + str(pair)+ ".time." + str(time_step)
-  os.system("python3 ys_NWrtparse-NO-header.py  "+target + " -x "+extract + " -g "+Dimer1+" "+ " -s "+spin+" "+ outputs[i] + ">" + output_Dimer1)
-  os.system("python3 ys_NWrtparse-NO-header.py  "+target + " -x "+extract + " -g "+Dimer2+" "+ " -s "+spin+" "+ outputs[i] + ">" + output_Dimer2)
+  os.system("python3 1_NWrtparse_NO_header.py  "+target + " -x "+extract + " -g "+Dimer1+" "+ " -s "+spin+" "+ outputs[i] + ">" + output_Dimer1)
+  os.system("python3 1_NWrtparse_NO_header.py  "+target + " -x "+extract + " -g "+Dimer2+" "+ " -s "+spin+" "+ outputs[i] + ">" + output_Dimer2)
   os.system("paste"+" "+ output_Dimer1 +" "+ output_Dimer2 +" > "+ filename+".charge") 
   i=i+1
 

@@ -3,7 +3,7 @@ import pandas as pd
 import glob
 import matplotlib.pyplot as plt
 
-outfile = glob.glob('gamma1.0-zeta1.0-E0.07-time.4999.reo')
+outfile = glob.glob('*.reo')
 
 tag1="# MO Occupations (alpha spin)"
 tag2="# MO Occupations (beta spin)"
@@ -42,7 +42,7 @@ for ifile in occfiles :
 	occf=pd.read_csv(ifile ,header=None,delimiter=' ')
 	f=pd.DataFrame(occf)
 	f2=f.drop(columns=0)
-	f_plot=f2.loc[0:200,9:10]
+	f_plot=f2.loc[0:5000,9:10]
 	f_plot.plot(figsize=(20, 9))
 	plt.title(filename)
 	plt.savefig(filename+'.png',bbox_inches='tight')
