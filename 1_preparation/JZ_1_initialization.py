@@ -1,7 +1,7 @@
 ################################################################
-JZ 1/10/2023 python3 script to call other python and slm files 
-	     initialize to generate .db .movec files
-JZ 1/12/2023 add in comment lines to show progress
+#JZ 1/10/2023 python3 script to call other python and slm files 
+#	     initialize to generate .db .movec files
+#JZ 1/12/2023 add in comment lines to show progress
 ################################################################
 import os
 import datetime
