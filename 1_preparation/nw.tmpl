@@ -27,10 +27,23 @@ dft
  odft
 end
 
-set geometry "Ne"
-set geometry "Ar"
-set geometry "dimer"
+set geometry "water1"
+dft
+  vectors output "water1.movecs"
+end
+task dft
 
+set geometry "water2"
+dft
+  vectors output "water2.movecs"
+end
+task dft
+
+set geometry "dimer"
+dft
+  vectors input fragment water1.movecs water2.movecs output dimer.movecs
+  noscf
+end
 task dft
 
 unset rt_tddft:*
